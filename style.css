@@ -123,6 +123,7 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   list-style: none;
 }
 
@@ -678,6 +679,7 @@ aside {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 500;
+  padding-left: 20px;
 }
 
 .sec-three-hed > h1 {
@@ -688,6 +690,7 @@ aside {
   letter-spacing: 5px;
   text-transform: uppercase;
   line-height: 1.8;
+  padding-left: 20px;
 }
 
 .sec-three-cards-container {
@@ -871,8 +874,7 @@ aside {
   padding: 35px;
   border-radius: 5px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(./assets/images/cover_bg_1.jpg.webp);
+  background-image: url(./assets/images/cover_bg_1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
@@ -886,6 +888,7 @@ aside {
 }
 
 .sec-four-cont h1 {
+  flex-wrap: wrap;
   display: flex;
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: bolder;
@@ -899,4 +902,118 @@ aside {
   width: 50%;
   line-height: 1.8;
   letter-spacing: 1px;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES (Mobile/Tablet)
+   ========================================= */
+
+@media (max-width: 991px) {
+  /* 1. Sidebar ko Fixed Top Navbar banayein */
+  aside {
+    position: fixed; /* Screen par chipak jaye */
+    top: 0;
+    left: 0;
+    width: 100%; /* Poori width */
+    height: auto; /* Height automatic ho content k hisab se */
+    z-index: 1000; /* Sabse uppar dikhe */
+    background-color: #f2f3f7; /* Background color zaroori hai */
+    border-bottom: 1px solid #ddd;
+    overflow-y: visible; /* Scroll allow karein agar menu lamba ho */
+    padding: 0;
+  }
+
+  /* Menu khulne par scroll allow karein */
+  .navbar-collapse {
+    max-height: 80vh; /* Screen ka 80% hissa */
+    overflow-y: auto; /* Scroll bar aajaye agar content zyada ho */
+  }
+
+  /* ====================================
+     SEC-ONE (HERO SECTION) FIX
+     ==================================== */
+
+  /* 1. Container ko screen par wapis set karein */
+  .sec-one {
+    width: 100% !important;
+    left: 0 !important;
+    padding-top: 0 !important; /* Slider ko top se shuru hone dein */
+  }
+
+  /* 2. SLIDER FIX (Ye sabse zaroori hai) */
+  /* Pehle ye 350px left tha, ab isay zero karein */
+  .slider {
+    left: 0 !important;
+    width: 100% !important; /* Full width */
+    height: 100vh; /* Puri screen height */
+  }
+
+  /* 3. Text Container (Designer / CV Div) Fix */
+  /* Text ko center karein aur padding adjust karein */
+  .designer-div,
+  .cv-div {
+    width: 100% !important; /* 500px se hata kar full width */
+    height: 100vh;
+    padding: 0 20px; /* Side mein thodi jagah chorein */
+    text-align: center; /* Text center acha lagega */
+    align-items: center; /* Flex items center */
+    padding-top: 80px; /* Navbar ke neeche na chupe, thora neeche layein */
+  }
+
+  /* 4. Font Sizes (Optional: Mobile k liye thora chota text) */
+  .designer-div h1,
+  .cv-div h1 {
+    font-size: 40px !important; /* Desktop par 60px tha, yahan chota karein */
+    text-align: center;
+  }
+
+  .designer-div p,
+  .cv-div p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  /* Button ko center karein */
+  .Documents-btn,
+  .button {
+    margin: 0 auto; /* Center alignment */
+  }
+
+  /* 2. Content ko neeche karein taake Navbar k peeche na chupe */
+  .sec-one,
+  .sec-two,
+  .sec-three,
+  .sec-four {
+    left: 0 !important;
+    width: 100% !important;
+    float: none;
+    /* Navbar ki height (approx 60-70px) k barabar padding dein */
+    padding-top: 80px;
+  }
+
+  /* 3. Images aur Layout fixes */
+  .nav-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sec-one-main-div-one,
+  .sec-one-main-div-two {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .designer-div,
+  .cv-div {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  /* Card spacing fix */
+  .sec-four-main-div {
+    width: 100%;
+    margin: 0;
+  }
 }
