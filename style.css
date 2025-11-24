@@ -200,70 +200,57 @@ aside {
 
 /* Portfolio button  */
 
-.Documents-btn {
+.portfolio-btn {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: fit-content;
-  height: 45px;
+  text-decoration: none;
   border: 2px solid rgb(49, 49, 83);
-  background-color: transparent;
-  padding: 0px 15px;
   border-radius: 5px;
-  gap: 10px;
+  background-color: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  width: 180px;
+  height: 40px;
   cursor: pointer;
-  transition: all 0.3s;
 }
-.folderContainer {
-  width: 40px;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  position: relative;
+
+.portfolio-text {
+  flex-grow: 1;
+  text-align: center;
+  color: rgb(49, 49, 83);
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: sans-serif;
 }
-.fileBack {
-  z-index: 1;
-  width: 80%;
-  height: auto;
-}
-.filePage {
-  width: 50%;
-  height: auto;
-  position: absolute;
-  z-index: 2;
-  transition: all 0.3s ease-out;
-}
-.fileFront {
-  width: 85%;
-  height: auto;
-  position: absolute;
-  z-index: 3;
-  opacity: 0.95;
-  transform-origin: bottom;
-  transition: all 0.3s ease-out;
-}
-.text {
-  color: black;
-  font-size: 12px;
-  font-weight: 100;
-  letter-spacing: 0.5px;
-}
-.Documents-btn:hover .filePage {
-  transform: translateY(-5px);
-}
-.Documents-btn:hover {
-  background-color: rgb(58, 58, 94);
-}
-.Documents-btn:active {
-  transform: scale(0.95);
-}
-.Documents-btn:hover .fileFront {
-  transform: rotateX(30deg);
-}
-.Documents-btn:hover .text {
+
+.portfolio-icon-box {
+  background-color: rgb(49, 49, 83);
   color: white;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.portfolio-btn i {
+  font-size: 20px;
+}
+
+.portfolio-btn:hover {
+  box-shadow: 0 5px 15px rgba(45, 46, 84, 0.2);
+  background-color: rgb(49, 49, 83);
+  transform: scale(1.01);
+}
+
+.portfolio-btn:hover .portfolio-text {
+  color: white;
+}
+
+.portfolio-btn:hover .portfolio-icon-box {
+  background-color: white;
+  color: rgb(49, 49, 83);
 }
 
 /* Button End  */
@@ -322,66 +309,56 @@ aside {
 
 /* Download CV Button  */
 
-.button {
-  position: relative;
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
+.cv-btn {
   display: flex;
   align-items: center;
+  text-decoration: none;
   border: 2px solid rgb(49, 49, 83);
-  background-color: transparent;
+  border-radius: 8px;
+  background-color: white;
   overflow: hidden;
-  border-radius: 5px;
+  transition: all 0.3s ease;
+  padding: 0;
+  width: 180px;
 }
 
-.button,
-.button__icon,
-.button__text {
-  transition: all 0.3s;
-}
-
-.button .button__text {
-  transform: translateX(22px);
+.cv-text {
+  flex-grow: 1;
+  text-align: center;
   color: rgb(49, 49, 83);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: sans-serif;
+  padding: 4px 5px;
 }
 
-.button .button__icon {
-  position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
+.cv-icon-box {
   background-color: rgb(49, 49, 83);
+  color: white;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
-.button .svg {
-  width: 20px;
-  fill: #fff;
+.cv-btn i {
+  font-size: 20px;
 }
 
-.button:hover {
-  background: rgb(49, 49, 83);
-}
-
-.button:hover .button__text {
-  color: transparent;
-}
-
-.button:hover .button__icon {
-  width: 148px;
-  transform: translateX(0);
-}
-
-.button:active .button__icon {
+.cv-btn:hover {
+  box-shadow: 0 5px 15px rgba(45, 46, 84, 0.2);
   background-color: rgb(49, 49, 83);
+  transform: scale(1.01);
 }
 
-.button:active {
-  border: 1px solid rgb(49, 49, 83);
+.cv-btn:hover .cv-text {
+  color: white;
+}
+
+.cv-btn:hover .cv-icon-box {
+  background-color: white;
+  color: rgb(49, 49, 83);
 }
 
 /* End button  */
@@ -907,7 +884,6 @@ aside {
 /* x ----------------------------------- x ----------------------------------- x ----------------------------------- x ----------------------------------- x  */
 
 /* Responsive Design  */
-
 
 @media (max-width: 991px) {
   aside {
